@@ -1,0 +1,39 @@
+# 1.create erc998Token
+Request:
+{
+"gcuid":1,
+"account": string,
+"tokenId": uint256,
+"uri": string,
+}
+Response:
+{
+"gcuid":1,
+"status": 1 | 0,
+}
+2.create child erc721token
+uint256 parentTokenId, address childContract ,uint256 childTokenId, string memory uri
+Request
+{
+  "gcuid":2,
+  "parentTokenId": uint256
+  "childContract": string
+  "childTokenId": uint256
+  "uri": string
+}
+3.transfer erc998Token
+{
+  "gcuid":3
+  "chain": "public" | "private"
+  "tokenId":uint256
+}
+4.transfer child erc721token
+{
+Gcuid int64 `json:"gcuid"`
+chain: private|public
+	ParentTokenId *big.Int `json:"parentTokenId"`
+	ChildContract string `json:"childContract"`
+	ChildTokenId *big.Int `json:"childTokenId"`
+}
+
+
