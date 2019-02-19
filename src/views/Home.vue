@@ -60,8 +60,11 @@ export default {
       }
     },
     created: function(){
-        let config = require('@/etc/config.json')
-        this.ws = new WebSocket(config.serverPath)
+        // let config = require('@/etc/config.json')
+        // this.ws = new WebSocket(config.serverPath)
+        console.log(process.env);
+        console.log(process.env.SERVER_PATH);
+        this.ws = new WebSocket(process.env.SERVER_PATH);
         this.ws.onopen = e => {
             console.log("websocket open")
         }

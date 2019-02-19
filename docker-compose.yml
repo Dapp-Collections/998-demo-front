@@ -1,0 +1,11 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: .
+      args:
+        SERVER_PATH: "ws://144.214.106.161:4000"
+    image: front-end:lastest
+    ports:
+      - "8080:8080"
+    command: http-server dist
